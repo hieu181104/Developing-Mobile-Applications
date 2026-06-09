@@ -32,7 +32,112 @@ Xây dựng một ứng dụng di động đa màn hình bằng nền tảng MIT
 ---
 
 # GIỚI THIỆU CÔNG CỤ MIT APP INVENTOR
+MIT App Inventor là nền tảng lập trình trực quan được phát triển bởi MIT cho phép người dùng xây dựng ứng dụng Android bằng cách kéo thả các thành phần giao diện và lập trình bằng các khối lệnh (Blocks).
 
+Ưu điểm:
+- Dễ học và dễ sử dụng, không yêu cầu quá cao kiến thức lập trình
+- Phát triển ứng dụng nhanh chóng, tiện lợi.
+- Hỗ trợ kiểm thử trực tiếp trên điện thoại.
+Nhược điểm:
+- Hiệu năng không cao khi xây dựng ứng dụng lớn, phức tạp
+- Khả năng tùy biến thấp hơn Android Studio.
+
+---
+
+# XÂY DỰNG PHẦN MỀM
+## 1. Xây dựng Screen 1: Giới thiệu bản thân
+### Bước 1: Khởi tạo dự án
+- Đăng nhập MIT App Inventor bằng Google Account
+- Tạo project mới : Chọn New Project => Đặt tên project => OK
+
+<img width="3071" height="1735" alt="image" src="https://github.com/user-attachments/assets/af8bc13b-65d3-4343-b1cd-bb4de76ff2a2" />
+
+Giao diện ban đầu sẽ hiển thị chế độ Designer cho Screen gồm các thành phần:
+
+- Palette chứa các thành phần giao diện như: Button, Label, TextBox, Image, WebViewer
+- Viewer là khu vực thiết kế giao diện ứng dụng.
+- Components là danh sách các thành phần đã được thêm vào màn hình
+- Properties cho phép thay đổi thuộc tính của các thành phần như: Text, Width, Height, Front Size, Background Color.
+
+<img width="3071" height="1647" alt="image" src="https://github.com/user-attachments/assets/9ebbdc3a-7787-4df0-940d-56cb7c0e83aa" />
+
+### Bước 2: Xây dựng UI cho Screen 1
+#### Đặt tiêu đề Screen
+- Tại cột properties kéo xuống bên dưới tìm thuộc tính Title và điền tên tiêu đề
+- Tích chọn Scrollable để cho phép màn hình cuộn xuống. 
+- AlignHorizontal điền giá trị Center để căn giữa.
+
+<img width="3066" height="1656" alt="Screenshot 2026-06-09 095825" src="https://github.com/user-attachments/assets/5a477f6a-ecdb-4dd3-aaa2-e15d3ce657d0" />
+
+<img width="3071" height="1653" alt="Screenshot 2026-06-09 100005" src="https://github.com/user-attachments/assets/b13766d9-22de-4e3e-b275-2575d6bf4c45" />
+
+#### Tạo khung chứa giao diện với Vertical Arrangement
+Thành phần này cho phép sắp xếp các đối tượng giao diện theo chiều dọc từ trên xuống dưới. Việc sử dụng Vertical Arrangement giúp giao diện dễ quản lý hơn, đồng thời tạo sự nhất quán khi bổ sung thêm các thành phần.
+
+<img width="3071" height="1650" alt="Screenshot 2026-06-09 100335" src="https://github.com/user-attachments/assets/58de5f64-9b08-409c-b5f5-e70aec1036cb" />
+
+#### Thêm tiêu đề bài viết
+
+<img width="3071" height="1654" alt="Screenshot 2026-06-09 101005" src="https://github.com/user-attachments/assets/51bc2380-c783-4e80-8ab9-e8d63178763f" />
+
+#### Thêm ảnh đại diện
+
+<img width="3071" height="1659" alt="Screenshot 2026-06-09 101435" src="https://github.com/user-attachments/assets/7b0bb5fd-0702-429a-9d62-5cb65436cab3" />
+
+<img width="3071" height="1652" alt="Screenshot 2026-06-09 101832" src="https://github.com/user-attachments/assets/e49ae719-2d67-43d7-b4b4-9de0f8521b68" />
+
+#### Thực hiện kéo thả tương tự với các label để hiển thị tên, mssv, ...
+Sau khi tạo thêm các label (rename nếu cần đễ dễ quản lý) , ta thu được màn hình chứa các thông tin cơ bản:
+
+<img width="3068" height="1654" alt="image" src="https://github.com/user-attachments/assets/69be9386-8c4c-4835-82f0-cb3990a958ec" />
+
+### Bước 3: Tạo Button để chuyển hướng tới hai màn hình còn lại
+#### Kéo button vào màn hình mobile và cấu hình 
+
+<img width="3071" height="1653" alt="Screenshot 2026-06-09 103519" src="https://github.com/user-attachments/assets/5b822390-41d0-4fdd-b291-3b8394bea13c" />
+
+<img width="3060" height="1650" alt="image" src="https://github.com/user-attachments/assets/280497ab-76dd-47f9-b5ae-7123d4a95481" />
+
+#### Thêm Screen 2 và 3
+
+<img width="3070" height="1644" alt="Screenshot 2026-06-09 104159" src="https://github.com/user-attachments/assets/4e6e15d9-97f1-4277-b7bc-b235f081c6ce" />
+
+<img width="3069" height="1648" alt="Screenshot 2026-06-09 104332" src="https://github.com/user-attachments/assets/84a1ba0c-3dc2-45f2-9dba-0fa07308ff76" />
+
+#### Điều hướng sang Screen 2 và 3
+
+- Chuyển từ chế độ Designer sang chế độ Blocks
+- Bấm vào Button2 ở cột danh sách bên trái, kéo khối sự kiện when Button1.Click do ra không gian làm việc.
+- Mở nhóm lệnh Control (màu cam), kéo khối open another screen screenName ghép vào trong thân khối Click.
+- Mở nhóm lệnh Text, kéo khối chuỗi trống " " ghép vào sau khối control và gõ chính xác chữ Screen2.
+- Làm tương tự cho Button3, nhập tên màn hình đích là Screen3.
+
+<img width="3071" height="1646" alt="Screenshot 2026-06-09 105346" src="https://github.com/user-attachments/assets/30890e6e-247f-4089-95a8-b567cbba5473" />
+
+<img width="3071" height="1646" alt="Screenshot 2026-06-09 105526" src="https://github.com/user-attachments/assets/2e6d455f-3300-4c9b-a080-09d32e3f6087" />
+
+<img width="3071" height="1643" alt="Screenshot 2026-06-09 105643" src="https://github.com/user-attachments/assets/11be2c92-c3b6-4657-867f-d8681f679f63" />
+
+#### Hai khối lệnh hoàn chỉnh
+
+<img width="3071" height="1642" alt="image" src="https://github.com/user-attachments/assets/5443c5ff-1f70-422b-8044-fddba6cc8c5a" />
+
+---
+
+## 2. Xây dựng Screen 2: Giải toán
+### Bước 1: 
+
+---
+
+## 3. Xây dựng Screen 3: Webview
+
+
+
+---
+
+# KIỂM THỬ PHẦN MỀM
+
+---
 
 # BẢN CHẤT CỦA BLOCK & CÔNG CỤ BACKPACK
 ## 1. Bản chất của việc kéo thả Block là gì?
