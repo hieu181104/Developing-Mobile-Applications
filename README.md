@@ -17,5 +17,6 @@ https://github.com/hieu181104/Developing-Mobile-Applications/blob/main/MITAppInv
 
 ### Bài 2: Viết app trên Android Studio
 
+https://github.com/hieu181104/Developing-Mobile-Applications/blob/main/AppAndroidStudio.md
 
 ---
