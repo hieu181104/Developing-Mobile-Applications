@@ -174,7 +174,7 @@ Giao diện gồm: 1 ô nhập để tìm kiếm (EditText), 1 nút bấm (Butto
 <img width="3071" height="1825" alt="image" src="https://github.com/user-attachments/assets/c87baed6-4ad4-4c43-90ee-962c38245080" />
 
 ### Bước 4: Viết logic xử lý dữ liệu
-Vào tab MainActivity.java. Viết code đọc file JSON từ thư mục assets và thực hiện thuật toán tìm kiếm tuyến tính khi người dùng bấm nút.
+Vào file MainActivity.java. Viết code đọc file JSON từ thư mục assets và thực hiện thuật toán tìm kiếm tuyến tính khi người dùng bấm nút.
 
 <img width="3071" height="1819" alt="image" src="https://github.com/user-attachments/assets/92abac5e-7dab-49f6-981f-b6dd8608c6ae" />
 
@@ -183,10 +183,16 @@ Vào tab MainActivity.java. Viết code đọc file JSON từ thư mục assets 
 <img width="3071" height="1816" alt="image" src="https://github.com/user-attachments/assets/1a52bcbc-6a08-4088-a7ad-deda9ed0d8f7" />
 
 ## 4. Kiểm thử
-Màn hình chính hiển thị danh sách các lỗi giao thông:
+
+### Màn hình chính hiển thị danh sách các lỗi giao thông:
 
 <img width="3071" height="1825" alt="image" src="https://github.com/user-attachments/assets/75d8469b-4d7a-4831-b005-2db42eeb585a" />
 
-Tra cứu: "Vượt đèn đỏ"
+### Tra cứu: "Vượt đèn đỏ"
+
 <img width="3071" height="1820" alt="image" src="https://github.com/user-attachments/assets/ef12cab3-3e28-4858-88d4-8db27037759c" />
+
+---
+
+
 
