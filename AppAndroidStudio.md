@@ -194,5 +194,103 @@ Vào file MainActivity.java. Viết code đọc file JSON từ thư mục assets
 
 ---
 
+# TẠO APP 2
+## 1. Tạo Project mới
+
+<img width="3071" height="1820" alt="image" src="https://github.com/user-attachments/assets/be2de93c-0fc9-484c-9dc5-f75eda7ca68f" />
+
+---
+
+## 2. Thêm thư viện kết nối mạng (OKHTTP)
+Để gửi được kết quả bài toán lên đường dẫn API `https://k58kmt.tdh.io.vn/api` của thầy, cần thêm thư viện kết nối mạng OkHttp vào dự án.
+
+- Ở cây thư mục Project bên trái, Mở file `build.gradle.kts (:app)`
+- Cuộn xuống dưới cùng, tìm đến khối lệnh dependencies { ... }.
+- Thêm dòng mã này vào trong khối lệnh đó:
+```
+implementation("com.squareup.okhttp3:okhttp:4.10.0")
+```
+Sau khi thêm xong, bấm Sync Now (hoặc biểu tượng con voi nhỏ) để Android Studio tự động tải thư viện về.
+
+---
+
+## 3. Khai báo quyền internet trong Manifest
+App 2 bắt buộc phải có mạng internet mới gọi được API và load được WebView. Đúng theo lý thuyết cần khai báo quyền:
+
+Vào đường dẫn: app => src => main mở file AndroidManifest.xml. Dán dòng xin quyền Internet này vào ngay phía trên thẻ <application>:
+
+<img width="3071" height="1821" alt="image" src="https://github.com/user-attachments/assets/4eb46b70-c122-4ea7-9bf8-fc885ad6dd75" />
+
+---
+
+## 4. Tạo thêm 2 activity mới (Màn hình 2 và 3)
+
+Mặc định khi tạo dự án đã có sẵn màn hình thứ nhất là MainActivity (Chúng ta sẽ dùng màn hình này làm Màn hình About Me). 
+
+Bây giờ cần tạo thêm 2 màn hình nữa:
+
+- Tạo Màn hình 2 (Giải toán): Click chuột phải vào thư mục app => New => Activity => Empty Views Activity. Đặt tên là MathActivity, bấm Finish.
+
+- Tạo Màn hình 3 (WebView): Click chuột phải tiếp vào thư mục app => New => Activity => Empty Views Activity. Đặt tên là WebActivity, bấm Finish.
+
+<img width="3071" height="1823" alt="image" src="https://github.com/user-attachments/assets/484f5897-709e-48c7-aad6-72652706f85c" />
+
+---
+
+## 5. Xây dựng màn hình
+
+### Màn hình 1: Giới thiệu bản thân
+
+#### File giao diện: activity_main.xml
+
+<img width="3071" height="1822" alt="image" src="https://github.com/user-attachments/assets/763b15db-4062-470f-9cf2-8ee2198313c0" />
+
+#### File xử lý Logic: MainActivity.java
+
+<img width="3071" height="1822" alt="image" src="https://github.com/user-attachments/assets/66ef5fb0-39af-4e85-8c16-cc9fa70bf3be" />
+
+---
+
+### Màn hình 2: Giải toán và gửi dữ liệu api
+
+- Màn hình này cho phép nhập 2 số a và b để giải phương trình bậc nhất ax + b = 0. 
+- Sau khi bấm giải, kết quả sẽ tự động đóng gói thành cấu hình JSON và POST lên Server qua thư viện OkHttp.
+
+#### File giao diện: activity_math.xml
+
+<img width="2344" height="1659" alt="image" src="https://github.com/user-attachments/assets/186eda8d-1113-42a0-a217-71e61f28cc75" />
+
+#### File xử lý Logic: MathActivity.java
+
+<img width="3071" height="1818" alt="image" src="https://github.com/user-attachments/assets/9a735506-a1fc-4fd8-8c01-d83d84d00f67" />
+
+---
+
+### Màn hình 3: Webview
+Màn hình này sử dụng đối tượng WebView để truy cập trực tiếp đường link kèm mã số sinh viên: `https://k58kmt.tdh.io.vn?masv=K225480106019`
+
+#### File giao diện: activity_web.xml
+
+<img width="3071" height="1819" alt="image" src="https://github.com/user-attachments/assets/3f71b06b-9c97-44b9-b43c-f63f6e2228ee" />
+
+#### File xử lý Logic: WebActivity.java
+
+<img width="3071" height="1826" alt="image" src="https://github.com/user-attachments/assets/a6df73d7-4957-42e7-abb9-83d0d0c78422" />
+
+---
+
+## 6. Chạy thử và xem kết quả
+
+### Màn hình 1
+
+<img width="3071" height="1818" alt="image" src="https://github.com/user-attachments/assets/f62b5c73-bc9c-4f79-ad14-5820a5a077e6" />
+
+## Màn hình 2:
+
+<img width="3071" height="1821" alt="image" src="https://github.com/user-attachments/assets/8c0a40f4-c1f9-4186-a197-a95fdaa9a8cc" />
+
+## Màn hình 3:
+
+<img width="3071" height="1823" alt="image" src="https://github.com/user-attachments/assets/ec5ffe9d-d707-463d-88c7-83f43bd0397c" />
 
 
