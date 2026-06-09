@@ -220,11 +220,38 @@ Cách này giúp vừa sửa code trên máy tính, vừa thấy app thay đổi
 ### Bước 1: Lên điện thoại (Android hoặc iPhone), vào cửa hàng ứng dụng (CH Play hoặc App Store) tìm và tải ứng dụng có tên: MIT App Inventor.
 ### Bước 2: Đảm bảo cả máy tính và điện thoại đang kết nối chung một mạng Wi-Fi.
 ### Bước 3: Trên giao diện trang web MIT App Inventor trên máy tính, thanh menu trên cùng => bấm vào Connect => chọn AI Companion. Lúc này màn hình máy tính sẽ hiện ra một mã QR và một đoạn mã 6 ký tự.
-### Bước 4: Mở ứng dụng trên điện thoại lên: Bấm nút scan QR code để quét mã trên màn hình máy tính. Hoặc gõ 6 ký tự vào ô trống rồi bấm connect with code.
 
+<img width="3071" height="1647" alt="image" src="https://github.com/user-attachments/assets/730aaef0-6d8a-458a-9ac7-c303bf1c7250" />
+
+### Bước 4: Mở ứng dụng trên điện thoại lên: Bấm nút scan QR code để quét mã trên màn hình máy tính. Hoặc gõ 6 ký tự vào ô trống rồi bấm connect with code.
 Kết quả: Đợi khoảng 5 giây, toàn bộ giao diện app 3 màn hình sẽ xuất hiện trên điện thoại.
 
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/39272705-d888-43c1-80d5-d3638ac74cda" />
 
+#### Trang giới thiệu bản thân
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/0c16f474-7b40-43be-a773-9d44fd798345" />
+
+#### Đổi sang độ C
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/e02f7438-3aa2-400b-82b3-134b83487c5b" />
+
+#### Đổi sang độ F
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/01504464-d6e1-4cf1-bcd8-47d701b48771" />
+
+#### Mở webview
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/c6f7dcc7-3102-4cce-be54-2067a2210264" />
+
+#### Test thử mục "Thời sự" bên trong website 
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/e445d43b-5ec7-4732-a4a0-b853042351c5" />
+
+## Đóng gói .apk
+
+Bước 1: Trên thanh menu của máy tính, bấm vào mục Build => chọn Android App (.apk).
+
+Bước 2: Hệ thống sẽ tiến hành biên dịch (Progress bar chạy từ 1% đến 100%). Quá trình này mất khoảng 1 - 2 phút.
+
+Bước 3: Sau khi chạy xong, màn hình sẽ hiện ra một mã QR mới để tải về hoặc một nút Download .apk now để tải file về máy tính.
+
+Bước 4: Tải file đó về điện thoại và tiến hành cài đặt.
 
 ---
 
