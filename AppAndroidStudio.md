@@ -117,6 +117,76 @@ public void myButtonClickAction(View v) {
     Toast.makeText(this, "Đã click cách 2 từ XML!", Toast.LENGTH_SHORT).show();
 }
 ```
-## 8. 
+## 8. Truy cập file trong assets và lợi ích của việc app có sẵn các files
+Ví dụ đọc một file:
 
+```
+InputStream inputStream =
+        getAssets().open("data.json");
+```
+
+Ý nghĩa: Cho phép ứng dụng truy cập dữ liệu đã đóng gói sẵn trong app.
+
+### Lợi ích của việc app có sẵn các files (kể cả offline)
+- Ứng dụng có thể hoạt động kể cả khi không có Internet.
+- Dữ liệu luôn sẵn trong ứng dụng
+
+---
+
+# TẠO APP 1
+## 1. Ý tưởng
+ỨNG DỤNG TRA CỨU ĐIỀU LUẬT GIAO THÔNG (OFFLINE - ASSETS)
+
+- Vấn đề: Người tham gia giao thông cần tra cứu nhanh các lỗi vi phạm và mức phạt kể cả khi điện thoại không có kết nối Internet (mất mạng, đi vùng sâu vùng xa).
+
+- Giải pháp: Xây dựng ứng dụng "Tra Cứu Lỗi Giao Thông Offline". Dữ liệu được biên soạn sẵn dưới dạng file JSON và lưu trong thư mục assets.
+
+## 2. Đặc thù dữ liệu và Thuật toán xử lý
+
+### Đặc thù dữ liệu: 
+File traffic_rules.json chứa một mảng các đối tượng, gồm: id, ten_loi (Tên lỗi vi phạm), muc_phat (Số tiền phạt), và loai_xe (Xe máy/Ô tô).
+
+### Thuật toán xử lý:
+Khi người dùng nhập từ khóa vào ô tìm kiếm, ứng dụng dùng thuật toán Tìm kiếm tuyến tính (Linear Search) kết hợp hàm contains() để lọc ra các lỗi vi phạm trùng khớp với từ khóa, sau đó cập nhật lên giao diện.
+
+### Đối tượng hiển thị: 
+Dùng RecyclerView kết hợp CardView để hiển thị danh sách lỗi vi phạm một cách trực quan, hiện đại.
+
+## 3. Xây dựng ứng dụng
+### Bước 1: Tạo project mới
+Chọn New Project => Empty Views Activity
+
+<img width="3071" height="1733" alt="image" src="https://github.com/user-attachments/assets/d8082a53-0733-479b-99a5-a68f2f7d535c" />
+
+### Bước 2: Tạo thư mục assets và file dữ liệu JSON
+Theo đề bài, APP 1 cần đọc dữ liệu chuẩn bị trước nằm trong thư mục assets.
+
+- Ở cột cấu trúc thư mục bên trái (Project), tìm đến thư mục main (đường dẫn: APP1 > app > src > main).
+- Nhấp chuột phải vào thư mục main -> chọn New -> chọn Folder (hoặc Directory) -> chọn assets
+- Bấm Finish ở bảng hiện ra. Lúc này, dưới thư mục main sẽ xuất hiện một thư mục mới tên là assets.
+- Nhấp chuột phải vào thư mục assets vừa tạo -> chọn New -> chọn File. Đặt tên file là traffic_rules.json.
+
+<img width="3071" height="1812" alt="image" src="https://github.com/user-attachments/assets/29d1b9ff-b827-484a-9374-96a27e7bc77f" />
+
+### Bước 3: Thiết kế Giao diện (File activity_main.xml)
+Giao diện gồm: 1 ô nhập để tìm kiếm (EditText), 1 nút bấm (Button) và 1 vùng hiển thị kết quả dạng danh sách hoặc văn bản
+
+<img width="3071" height="1825" alt="image" src="https://github.com/user-attachments/assets/c87baed6-4ad4-4c43-90ee-962c38245080" />
+
+### Bước 4: Viết logic xử lý dữ liệu
+Vào tab MainActivity.java. Viết code đọc file JSON từ thư mục assets và thực hiện thuật toán tìm kiếm tuyến tính khi người dùng bấm nút.
+
+<img width="3071" height="1819" alt="image" src="https://github.com/user-attachments/assets/92abac5e-7dab-49f6-981f-b6dd8608c6ae" />
+
+### Bước 5: Khai báo chuỗi vào file strings.xml
+
+<img width="3071" height="1816" alt="image" src="https://github.com/user-attachments/assets/1a52bcbc-6a08-4088-a7ad-deda9ed0d8f7" />
+
+## 4. Kiểm thử
+Màn hình chính hiển thị danh sách các lỗi giao thông:
+
+<img width="3071" height="1825" alt="image" src="https://github.com/user-attachments/assets/75d8469b-4d7a-4831-b005-2db42eeb585a" />
+
+Tra cứu: "Vượt đèn đỏ"
+<img width="3071" height="1820" alt="image" src="https://github.com/user-attachments/assets/ef12cab3-3e28-4858-88d4-8db27037759c" />
 
