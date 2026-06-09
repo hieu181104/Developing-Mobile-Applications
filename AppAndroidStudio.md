@@ -1,4 +1,4 @@
-# PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG
+# BÀI TẬP 2 - VIẾT APP SỬ DỤNG ANDROID STUDIO
 
 > Họ và tên: Nguyễn Trung Hiếu
 
@@ -6,4 +6,6 @@
 
 ---
 
-# 
+# YÊU CẦU BÀI TẬP
+
+
