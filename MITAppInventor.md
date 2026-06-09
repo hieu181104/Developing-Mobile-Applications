@@ -61,7 +61,7 @@ Giao diện ban đầu sẽ hiển thị chế độ Designer cho Screen gồm c
 
 <img width="3071" height="1647" alt="image" src="https://github.com/user-attachments/assets/9ebbdc3a-7787-4df0-940d-56cb7c0e83aa" />
 
-### Bước 2: Xây dựng UI cho Screen 1
+### Bước 2: Xây dựng giao diện
 #### Đặt tiêu đề Screen
 - Tại cột properties kéo xuống bên dưới tìm thuộc tính Title và điền tên tiêu đề
 - Tích chọn Scrollable để cho phép màn hình cuộn xuống. 
@@ -125,13 +125,92 @@ Sau khi tạo thêm các label (rename nếu cần đễ dễ quản lý) , ta t
 ---
 
 ## 2. Xây dựng Screen 2: Giải toán
-### Bước 1: 
+### Bước 1: Xây dựng giao diện
+Ý tưởng: Bài toán chuyển đổi nhiệt độ
+Bài toán này cho phép người dùng nhập vào một giá trị nhiệt độ, sau đó chọn đổi từ độ C sang độ F hoặc ngược lại.
+#### Thực hiện kéo thả tương tự như việc xây dựng UI cho screen 1 và cấu hình tùy ý.
+Thiết kế giao diện (Designer):
+- 1 Label để hiển thị tiêu đề
+- 1 TextBox để người dùng nhập số nhiệt độ.
+- 2 Button: Nút 1 là "Đổi sang độ F", Nút 2 là "Đổi sang độ C".
+- 1 Label để hiển thị kết quả.
+
+<img width="3071" height="1655" alt="Screenshot 2026-06-09 130119" src="https://github.com/user-attachments/assets/a93d3e2b-a941-4c38-873a-dd9f4d3250f0" />
+
+<img width="3070" height="1651" alt="image" src="https://github.com/user-attachments/assets/82bac6bf-39da-4424-b405-92cafd5b5c25" />
+
+### Bước 2: Xây dựng Blocks
+Chuyển sang tab Blocks
+
+Công thức toán học:
+- Từ C sang F: F = C x 1.8 + 32
+- Từ F sang C: C = (F-32) / 1.8 
+
+#### Lập trình cho nút C_Button (Đổi sang độ C)
+- Kéo khối `when C_Button.Click` ra
+- Nhìn vào danh mục bên trái, bấm vào thành phần Result, kéo khối `set Result.Text to` thả vào trong khối `when C_Button.Click`
+- Bấm vào mục Math (màu xanh dương): Kéo khối phép chia (/) gắn vào ô trống của khối set.
+- Kéo khối phép trừ (-) gắn vào nhánh bên trái của khối phép chia.
+- Bấm vào thành phần `TextBox1` ở cột bên trái, kéo khối `TextBox1.Text` gắn vào nhánh bên trái của khối phép trừ.
+- Vào lại mục Math, kéo 2 khối số 0 ra sửa thành số 32 (gắn vào bên phải phép trừ) và số 1.8 (gắn vào bên phải phép chia).
+
+
+#### Lập trình cho nút F_Button (Đổi sang độ F)
+- Làm hoàn toàn tương tự bằng cách kéo khối `when F_Button.Click ra` và lắp ráp các khối toán học:
+- Kéo khối `set Result.Text to`.
+- Vào mục Math, kéo khối phép cộng (+) gắn vào.
+- Tiếp tục vào mục Math, kéo khối phép nhân (×) gắn vào nhánh bên trái của khối phép cộng.
+- Gắn khối `TextBox1.Text` vào bên trái phép nhân.
+- Lấy khối số điền 1.8 gắn vào bên phải phép nhân.
+- Lấy khối số điền 32 gắn vào bên phải phép cộng.
+
+<img width="3071" height="1643" alt="image" src="https://github.com/user-attachments/assets/ba26b5df-0181-4a6e-a1f2-7a887643358d" />
 
 ---
 
 ## 3. Xây dựng Screen 3: Webview
 
+Mục tiêu của màn hình này là biến ứng dụng thành một "trình duyệt mini" để hiển thị một trang web có sẵn. Để hỗ trợ giao diện di động tốt nhất, nên chọn các trang web có tính chất "Responsive" (tự động co giãn theo màn hình điện thoại).
 
+### Bước 1: Xây dựng giao diện
+
+#### Thêm nút Quay lại:
+- Kéo một Button vào trên cùng màn hình.
+- Đặt tên là btnBack. Đổi Text thành "Quay lại Trang chủ".
+- Mục đích: Để người dùng không bị "kẹt" ở Screen 3.
+
+#### Thêm thành phần WebViewer:
+
+- Tại cột Palette, tìm nhóm User Interface.
+
+- Kéo WebViewer (thường nằm ở cuối danh sách) thả vào màn hình.
+
+#### Cấu hình quan trọng ở cột Properties:
+
+- Height (Chiều cao): Chọn Fill Parent (để nó chiếm hết phần còn lại của màn hình).
+
+- Width (Chiều rộng): Chọn Fill Parent.
+
+- HomeUrl: Đây là nơi dán link trang web muốn hiển thị.
+
+- FollowLinks: Đảm bảo ô này được Tick chọn (để khi người dùng bấm vào các link bên trong trang web, nó vẫn chạy tiếp trong app).
+
+<img width="3069" height="1649" alt="Screenshot 2026-06-09 135200" src="https://github.com/user-attachments/assets/b6ae048c-a314-48f2-8efc-2e1edaf8fbbc" />
+
+### Bước 2: Xây dựng Blocks
+#### Đảm bảo trang web luôn load khi mở màn hình:
+Mặc dù đã điền HomeUrl, nhưng để chắc chắn trang web sẽ được tải ngay khi Screen 3 xuất hiện. Lắp block sau:
+
+- Vào Screen3 chọn: when Screen3.Initialize do
+- Vào WebViewer1 chọn: call WebViewer1.GoToUrl
+- Gắn một khối Text chứa link trang web vào.
+
+#### Lập trình nút Quay lại:
+- Vào btnBack chọn: when btnBack.Click do
+- Vào mục Control chọn: open another screen with screenName
+- Gắn khối Text điền chữ "Screen1".
+
+<img width="3071" height="1651" alt="image" src="https://github.com/user-attachments/assets/0a20ba20-4a9f-43e2-85a1-d91c3e992cf7" />
 
 ---
 
