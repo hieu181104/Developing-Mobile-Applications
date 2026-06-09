@@ -13,6 +13,8 @@
 # MỤC LỤC
 ### Bài 1: Viết phần mềm trên MIT App Inventor
 
+https://github.com/hieu181104/Developing-Mobile-Applications/blob/main/MITAppInventor.md
+
 ### Bài 2: Viết app trên Android Studio
 
 
